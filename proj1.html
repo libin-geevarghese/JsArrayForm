@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: rgb(24, 110, 118)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array 1</title>
+
+    <script>
+      var x = ["hai", "hello", "how", "when", "why"];
+      var y = document.getElementById("in1").value;
+
+      function refresh() {
+        document.getElementById("out1").innerHTML = x;
+      }
+
+      function fun1() {
+        var y = document.getElementById("in1").value;
+        var m = x.push(y);
+        refresh();
+      }
+
+      function fun2() {
+        var y = document.getElementById("in1").value;
+        var m = x.unshift(y);
+        refresh();
+      }
+
+      function fun3() {
+        var m = x.shift();
+        refresh();
+      }
+
+      function fun4() {
+        let m = x.pop();
+        refresh();
+      }
+
+      function length() {
+        alert(x.length);
+        refresh();
+      }
+
+      function find() {
+        let m = document.getElementById("in2").value;
+        alert(x[m]);
+      }
+
+      function search() {
+        var search1 = document.getElementById("in3").value;
+        if (x.includes(search1)) {
+          alert(
+            search1 +
+              " is available in this array and the position is  " +
+              x.indexOf(search1)
+          );
+        } else {
+          alert(search1 + " is not available in this array");
+        }
+      }
+    </script>
+  </head>
+  <body style="text-align: center">
+    <div style="color: rgb(9, 9, 9)">
+      <h1>
+        <br />
+        <br />
+        <span>
+          <strong id="out1" style="background-color: aqua"></strong>
+        </span>
+
+        <br />
+        <br />
+        <button onclick="refresh()">Click to refresh Array</button>
+
+        <button onclick="length()">Click to find length of Array</button>
+
+        <br />
+        <br />
+
+        <button onclick="fun3()">Shift</button>
+        <button onclick="fun4()">pop</button>
+        <br />
+        <br />
+        <button onclick="fun2()">unshift</button>
+        <input
+          type="text"
+          id="in1"
+          autocomplete="off"
+          placeholder="Enter the elements to be added to Array"
+          size="30"
+        />
+        <button onclick="fun1()">Push</button>
+
+        <br />
+        <br />
+
+        <input
+          type="text"
+          id="in2"
+          autocomplete="off"
+          placeholder="Enter the Element Number to find"
+          size="30"
+        />
+
+        <button onclick="find()">Find</button>
+        <br />
+        <br />
+
+        <input
+          type="text"
+          id="in3"
+          autocomplete="off"
+          placeholder="Enter the Element to search"
+          size="30"
+        />
+
+        <button onclick="search()">Find</button>
+      </h1>
+    </div>
+  </body>
+</html>
